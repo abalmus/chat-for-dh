@@ -2,9 +2,9 @@
   "name": "chat-for-dh",
   "version": "1.0.0",
   "description": "Test tast for docler holding - simple chat",
-  "main": "index.ts",
+  "main": "src/server/index.ts",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "ts-node src/server/index.ts"
   },
   "repository": {
     "type": "git",
