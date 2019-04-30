@@ -1,0 +1,33 @@
+{
+  "name": "chat-for-dh",
+  "version": "1.0.0",
+  "description": "Test tast for docler holding - simple chat",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abalmus/chat-for-dh.git"
+  },
+  "keywords": [
+    "chat",
+    "socketio"
+  ],
+  "author": "Andrei Balmus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abalmus/chat-for-dh/issues"
+  },
+  "homepage": "https://github.com/abalmus/chat-for-dh#readme",
+  "dependencies": {
+    "@types/react": "^16.8.15",
+    "odi": "^0.3.92",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "ts-node": "^8.1.0"
+  }
+}
