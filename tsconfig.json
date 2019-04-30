@@ -6,7 +6,7 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
 
-        "rootDirs": ["./src/server", "./src/client"],
+        "rootDirs": ["./server/src"],
         "outDir": "./dist",
         "target": "ES2018",
         "module": "commonjs",

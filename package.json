@@ -2,7 +2,7 @@
   "name": "chat-for-dh",
   "version": "1.0.0",
   "description": "Test tast for docler holding - simple chat",
-  "main": "src/server/index.ts",
+  "main": "server/src/index.ts",
   "scripts": {
     "start": "nodemon"
   },

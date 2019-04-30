@@ -1,5 +1,5 @@
 import { Service } from "odi";
-import { MessageI } from '../../types';
+import { MessageI } from '../types';
 
 @Service()
 export default class MessagesService {
