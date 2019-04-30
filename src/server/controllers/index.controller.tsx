@@ -1,25 +1,14 @@
 import React from 'react';
-import { Controller, IController, Get } from 'odi';
+import { Controller, IController, Get, Autowired } from 'odi';
 import { ClientIndex } from '../../client/index';
-import { MessageI } from '../../types';
+import MessagesService from '../services/messages';
 
 @Controller()
 export class IndexController extends IController {
-    messages: MessageI[] = [{
-        time: Date.now(),
-        username: 'root',
-        text: 'Hi there, how are you'
-    }, {
-        time: Date.now(),
-        username: 'root',
-        text: 'Hi there, how are you'
-    }, {
-        time: Date.now(),
-        username: 'root',
-        text: 'Hi there, how are you'
-    }];
+    @Autowired()
+    messages: MessagesService;
 
     @Get index() {
-        return <ClientIndex messages={this.messages} />
+        return <ClientIndex messages={this.messages.getAll()} />
     }
 }
