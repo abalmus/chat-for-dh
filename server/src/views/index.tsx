@@ -9,7 +9,7 @@ export const ClientIndex = ({ messages = [] }: ClientIndexPropsI) => (
         </head>
         <body>
             <div className="messages" tabIndex={0}>
-                <ul>
+                <ul id="messages">
                     { messages.map((message: MessageI, i) => <Message key={i} {...message} /> )}
                 </ul>
             </div>
