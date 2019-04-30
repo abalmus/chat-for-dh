@@ -1,4 +1,4 @@
-import { Service } from "odi";
+import { Service } from 'odi';
 import { MessageI } from '../types';
 
 @Service()

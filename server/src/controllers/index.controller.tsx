@@ -8,11 +8,7 @@ export class IndexController extends IController {
     @Autowired()
     messages: MessagesService;
 
-    handleMessageSubmit(evnt: any) {
-        console.log(evnt);
-    }
-
     @Get index() {
-        return <ClientIndex messages={this.messages.getAll()} onSubmitHandler={this.handleMessageSubmit} />
+        return <ClientIndex messages={this.messages.getAll()}  />
     }
 }
