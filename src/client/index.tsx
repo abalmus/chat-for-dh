@@ -1,27 +1,15 @@
 import React from 'react';
+import { Message } from './components';
+import { ClientIndexPropsI, MessageI } from '../types';
 
-interface Message {
-    time: number,
-    username: string;
-    text: string
-}
-
-interface Props {
-    messages: Message[];
-}
-
-const Message = ({ username, text, time }: Message) => (
-    <li>{text}</li>
-);
-
-export const ClientIndex = ({ messages = [] }: Props) => (
+export const ClientIndex = ({ messages = [] }: ClientIndexPropsI) => (
     <html >
         <head>
             <title>Docler Chat</title>
         </head>
         <body>
             <ul>
-                { messages.map((message, i) => <Message key={i} {...message} /> )}
+                { messages.map((message: MessageI, i) => <Message key={i} {...message} /> )}
             </ul>
         </body>
     </html>
