@@ -1,7 +1,7 @@
 import React from 'react';
 import { SettingsPagePropsI } from '../types/index';
 
-export const SettingsPage = () => (
+export const SettingsPage = ({ user }: SettingsPagePropsI) => (
     <html >
         <head>
             <title>Docler Chat Settings</title>
@@ -9,7 +9,7 @@ export const SettingsPage = () => (
         <body>
             <form id="settingsForm" tabIndex={0}>
                 <label htmlFor="userName">User Name</label>
-                <input type="text" name="userName"  />
+                <input type="text" name="userName" defaultValue={user.userName} />
                 <button type="submit">Save</button>
             </form>
         </body>

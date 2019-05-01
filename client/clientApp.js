@@ -8,7 +8,7 @@ messageForm.addEventListener('submit', handleMessagesFormSubmit);
 
 function handleMessagePush(message) {
     const li = document.createElement('li');
-    li.innerHTML = `${message.username}: ${message.text}`;
+    li.innerHTML = `${message.userName}: ${message.text}`;
     messagesContainer.append(li);
 }
 
@@ -17,10 +17,11 @@ function handleMessagesFormSubmit(evnt) {
 
     const { target } = evnt;
     const inputElement = target.querySelector('input[name="message"]');
+    const user = JSON.parse(localStorage.getItem('user'));
 
     socket.emit('massage:push', { 
-        text: inputElement.value, 
-        username: 'inserted value'
+        text: inputElement.value,
+        userName: user.userName
     });
 
     inputElement.value = '';

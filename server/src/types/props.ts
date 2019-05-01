@@ -1,11 +1,10 @@
-import { MessageI } from '../types';
-import { UserSettingsI } from './User';
+import { MessageI, UserI } from '../types';
 
 export interface ChatPagePropsI {
     messages: MessageI[];
+    user: UserI;
 }
 
 export interface SettingsPagePropsI {
-    username: string;
-    settings: UserSettingsI
+    user: UserI;
 }

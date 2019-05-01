@@ -1,8 +1,8 @@
 import React from 'react';
 import { MessageI } from '../../types/index';
 
-const Message = ({ username, text, time }: MessageI) => (
-    <li>{username}: {text}</li>
+const Message = ({ userName, text, time }: MessageI) => (
+    <li>{userName}: {text}</li>
 );
 
 export default Message;

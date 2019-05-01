@@ -5,7 +5,7 @@ export interface UserSettingsI {
 }
 
 export default interface UserI {
-    id: number | null;
+    id: string | null;
     userName: string;
     settings: UserSettingsI;
 }

@@ -3,19 +3,10 @@ import { UserI } from '../types';
 
 @Service()
 export default class UserService {
-    private incrementId = 0;
     private store: any = {};
-    // {
-    //     id: Date.now(),
-    //     username: '',
-    //     settings: {
-    //         interfaceColor: 'light',
-    //         timeFormat: '12',
-    //         submitShortcut: true
-    //     }
-    // };
 
     update({ id, ...rest }: UserI) {
+        console.log(id);
         if (id) {
             this.store[id] = {...rest};
 
@@ -24,20 +15,34 @@ export default class UserService {
                 ...rest
             }
         } else {
-            this.store[++this.incrementId] = {...rest};
+            const uid = makeId(10);
+            this.store[uid] = {...rest};
 
             return {
-                id: this.incrementId,
+                id: uid,
                 ...rest
             }
         }
     }
 
-    getUser(id: number) {
-        return this.store[id];
+    getUser(id: number | string) {
+        console.log('>>', this.store);
+        return this.store[id] || {};
     }
 
     getSettings() {
         return this.store.userName;
     }
 }
+
+function makeId(size: number) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+
+    for ( var i = 0; i < size; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
+ }

@@ -1,5 +1,5 @@
 export default interface MessageI {
     time: number,
-    username: string;
+    userName: string;
     text: string
 }

@@ -17,6 +17,7 @@ function handleSettingsFormSubmit(evnt) {
         })
     }).then(response => response.json()).then(data => {
         if (data && data.id) {
+            localStorage.setItem('user', JSON.stringify(data));
             window.location.href = '/';
         }
     });

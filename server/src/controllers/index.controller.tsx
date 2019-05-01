@@ -19,6 +19,6 @@ export class IndexController extends IController {
             return this.redirect('/settings');
         }
 
-        return <ChatPage messages={this.messages.getAll()}  />
+        return <ChatPage messages={this.messages.getAll()} user={this.settings.getUser(userId)} />
     }
 }

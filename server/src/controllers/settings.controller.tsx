@@ -8,8 +8,6 @@ export class SettingsDTO {
     @MaxLength(10)
     @MinLength(2)
     userName: string;
-
-
 }
 
 @Controller('settings')
@@ -18,13 +16,14 @@ export class SettingsController extends IController {
     settings: UserService;
 
     @Get index() {
-        return <SettingsPage  />
+        const userId = this.getCookie('user-id');
+        return <SettingsPage user={this.settings.getUser(userId)} />
     }
 
     @Post save(payload: SettingsDTO) {
         const userId = this.getCookie('user-id');
         const user = this.settings.update({
-            id: userId ? Number(userId) : null,
+            id: userId ? userId : null,
             settings: {
                 interfaceColor: 'light',
                 timeFormat: '12',

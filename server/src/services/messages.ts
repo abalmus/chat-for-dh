@@ -5,15 +5,15 @@ import { MessageI } from '../types';
 export default class MessagesService {
     private store: MessageI[] = [{
         time: Date.now(),
-        username: 'root',
+        userName: 'root',
         text: 'Hi there, how are you'
     }, {
         time: Date.now(),
-        username: 'root',
+        userName: 'root',
         text: 'Hi there, how are you'
     }, {
         time: Date.now(),
-        username: 'root',
+        userName: 'root',
         text: 'Hi there, how are you'
     }];
     
