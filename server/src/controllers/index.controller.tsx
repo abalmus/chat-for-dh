@@ -14,11 +14,12 @@ export class IndexController extends IController {
 
     @Get index() {
         const userId = this.getCookie('user-id');
+        const user = this.settings.getUser(userId);
 
-        if (!userId) {
+        if (!userId || !user || !user.userName) {
             return this.redirect('/settings');
         }
 
-        return <ChatPage messages={this.messages.getAll()} user={this.settings.getUser(userId)} />
+        return <ChatPage messages={this.messages.getAll()} user={user} />
     }
 }

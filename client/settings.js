@@ -5,6 +5,10 @@ function handleSettingsFormSubmit(evnt) {
     evnt.preventDefault();
     
     const userNameElement = evnt.target.querySelector('input[name="userName"]');
+    const interfaceColorElement = evnt.target.querySelector('input[name="interfaceColor"]:checked');
+    const timeFormatElement = evnt.target.querySelector('input[name="timeFormat"]:checked');
+    const ctrlEnterElement = evnt.target.querySelector('input[name="ctrlEnter"]:checked');
+    const languageElement = evnt.target.querySelector('select[name="language"]');
 
     fetch('/settings/save', {
         credentials: 'same-origin',
@@ -13,7 +17,13 @@ function handleSettingsFormSubmit(evnt) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            userName: userNameElement.value
+            userName: userNameElement.value,
+            settings: {
+                interfaceColor: interfaceColorElement.value,
+                timeFormat: timeFormatElement.value,
+                ctrlEnter: ctrlEnterElement.value,
+                language: languageElement.value
+            }
         })
     }).then(response => response.json()).then(data => {
         if (data && data.id) {

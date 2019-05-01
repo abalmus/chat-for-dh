@@ -6,7 +6,6 @@ export default class UserService {
     private store: any = {};
 
     update({ id, ...rest }: UserI) {
-        console.log(id);
         if (id) {
             this.store[id] = {...rest};
 
@@ -26,7 +25,6 @@ export default class UserService {
     }
 
     getUser(id: number | string) {
-        console.log('>>', this.store);
         return this.store[id] || {};
     }
 

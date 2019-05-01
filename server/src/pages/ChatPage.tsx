@@ -11,7 +11,7 @@ export const ChatPage = ({ messages = [], user }: ChatPagePropsI) => (
             <h1>Hello {user.userName}</h1>
             <div className="messages" tabIndex={0}>
                 <ul id="messages">
-                    { messages.map((message: MessageI, i) => <Message key={i} {...message} /> )}
+                    { messages.map((message: MessageI, i) => <Message key={i} {...message} isSelf={user.userName === message.userName} /> )}
                 </ul>
             </div>
             <div className="control" tabIndex={0}>

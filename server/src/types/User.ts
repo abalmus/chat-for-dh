@@ -1,7 +1,8 @@
 export interface UserSettingsI {
     interfaceColor: string;
     timeFormat: string;
-    submitShortcut: boolean;
+    ctrlEnter: string;
+    language: string;
 }
 
 export default interface UserI {

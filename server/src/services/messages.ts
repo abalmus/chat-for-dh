@@ -3,19 +3,7 @@ import { MessageI } from '../types';
 
 @Service()
 export default class MessagesService {
-    private store: MessageI[] = [{
-        time: Date.now(),
-        userName: 'root',
-        text: 'Hi there, how are you'
-    }, {
-        time: Date.now(),
-        userName: 'root',
-        text: 'Hi there, how are you'
-    }, {
-        time: Date.now(),
-        userName: 'root',
-        text: 'Hi there, how are you'
-    }];
+    private store: MessageI[] = [];
     
     getAll() {
         return this.store;
