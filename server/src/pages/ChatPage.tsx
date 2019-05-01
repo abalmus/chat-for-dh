@@ -1,8 +1,8 @@
 import React from 'react';
-import { Message } from './components';
-import { ClientIndexPropsI, MessageI } from '../types';
+import { Message } from './components/index';
+import { ChatPagePropsI, MessageI } from '../types/index';
 
-export const ClientIndex = ({ messages = [] }: ClientIndexPropsI) => (
+export const ChatPage = ({ messages = [] }: ChatPagePropsI) => (
     <html >
         <head>
             <title>Docler Chat</title>

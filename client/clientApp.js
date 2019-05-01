@@ -2,8 +2,9 @@ const socket = io('/app');
 const messageForm = document.querySelector('#messageForm');
 const messagesContainer = document.querySelector('#messages');
 
-messageForm.addEventListener('submit', handleFormSubmit);
 socket.on('message:pushed', handleMessagePush);
+
+messageForm.addEventListener('submit', handleMessagesFormSubmit);
 
 function handleMessagePush(message) {
     const li = document.createElement('li');
@@ -11,8 +12,9 @@ function handleMessagePush(message) {
     messagesContainer.append(li);
 }
 
-function handleFormSubmit(evnt) {
+function handleMessagesFormSubmit(evnt) {
     evnt.preventDefault();
+
     const { target } = evnt;
     const inputElement = target.querySelector('input[name="message"]');
 
