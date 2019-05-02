@@ -1,5 +1,5 @@
 export default interface MessageI {
-    time: number;
+    time: Date;
     userName: string;
     text: string;
     isSelf?: boolean;

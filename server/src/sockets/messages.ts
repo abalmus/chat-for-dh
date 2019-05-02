@@ -9,6 +9,8 @@ export default class MessagesSocket extends ISocket {
 
     @OnEvent('massage:push')
     onmessage(message: MessageI) {
+        message.time = new Date();
+
         this.messages.push(message);
         this.emit('message:pushed', message);
     }

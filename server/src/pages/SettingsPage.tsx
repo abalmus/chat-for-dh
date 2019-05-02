@@ -5,6 +5,7 @@ export const SettingsPage = ({ user }: SettingsPagePropsI) => (
     <html >
         <head>
             <title>Docler Chat Settings</title>
+            <link rel="stylesheet" href="https://npmcdn.com/wire.css/dist/wire.min.css" type="text/css"></link>
         </head>
         <body>
             <form id="settingsForm" tabIndex={0}>
