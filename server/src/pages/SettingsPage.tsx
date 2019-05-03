@@ -1,51 +1,51 @@
 import React from 'react';
 import { SettingsPagePropsI } from '../types/index';
+import { PageLayout } from './layouts/PageLayout';
 
 export const SettingsPage = ({ user }: SettingsPagePropsI) => (
-    <html >
-        <head>
-            <title>Docler Chat Settings</title>
-            <link rel="stylesheet" href="https://npmcdn.com/wire.css/dist/wire.min.css" type="text/css"></link>
-        </head>
-        <body>
+    <PageLayout js={['/client/settings.js']}>
+        <section className="settings-container">
             <form id="settingsForm" tabIndex={0}>
-                <label htmlFor="userName">User Name</label>
-                <input type="text" name="userName" defaultValue={user.userName} />
-                <div>
-                    <h5>Interface Color</h5>
+                <div className="field-group">
+                    <h3><label htmlFor="userName">User Name</label></h3>
+                    <input type="text" name="userName" defaultValue={user.userName} placeholder="Please inser your name" />
+                </div>
+
+                <div className="field-group">
+                    <h3>Interface Color</h3>
                     <input type="radio" name="interfaceColor" value="light" id="interfaceColorLight" defaultChecked={true} /> 
-                    <label>Light</label>
+                    <label htmlFor="interfaceColorLight">Light</label>
                     <input type="radio" name="interfaceColor" value="dark" id="interfaceColorDight"  /> 
-                    <label>Dark</label>
+                    <label htmlFor="interfaceColorDight">Dark</label>
                 </div>
 
-                <div>
-                    <h5>Time Format</h5>
+                <div className="field-group">
+                    <h3>Time Format</h3>
                     <input type="radio" name="timeFormat" value="12" id="timeFormat12" defaultChecked={true} /> 
-                    <label>12 hours</label>
+                    <label htmlFor="timeFormat12">12 hours</label>
                     <input type="radio" name="timeFormat" value="24" id="timeFormat24" /> 
-                    <label>24 hours</label>
+                    <label htmlFor="timeFormat24">24 hours</label>
                 </div>
 
-                <div>
-                    <h5>CTRL+ENTER</h5>
+                <div className="field-group">
+                    <h3>CTRL+ENTER</h3>
                     <input type="radio" name="ctrlEnter" value="on" id="ctrlEnterOn" defaultChecked={true} /> 
-                    <label>On</label>
+                    <label htmlFor="ctrlEnterOn">On</label>
                     <input type="radio" name="ctrlEnter" value="off" id="ctrlEnterOff" /> 
-                    <label>Off</label>
+                    <label htmlFor="ctrlEnterOff">Off</label>
                 </div>
 
-                <div>
-                    <h5>Language</h5>
+                <div className="field-group">
+                    <h3>Language</h3>
                     <select name="language">
                         <option value="en">English</option>
                         <option value="de">Germany</option>
                     </select>
                 </div>
                 <br />
+
                 <button type="submit">Save</button>
             </form>
-        </body>
-        <script type="text/javascript" src="/client/settings.js"></script>
-    </html>
+        </section>
+    </PageLayout>
 )

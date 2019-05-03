@@ -14,3 +14,7 @@ export interface PageLayoutPropsI {
 export interface SettingsPagePropsI {
     user: UserI;
 }
+
+export interface AvatarPropsI {
+    letter: string;
+}

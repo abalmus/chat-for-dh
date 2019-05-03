@@ -25,6 +25,7 @@ function handleMessagePush(message) {
     li.append(divInfo);
 
     messagesContainer.append(li);
+    scrallContainer();
 }
 
 function handleMessagesFormSubmit(evnt) {
@@ -38,5 +39,12 @@ function handleMessagesFormSubmit(evnt) {
         userName: user.userName
     });
 
+    scrallContainer();
     inputElement.value = '';
 }
+
+function scrallContainer() {
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+scrallContainer();

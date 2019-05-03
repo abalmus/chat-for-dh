@@ -1,5 +1,7 @@
 import Message from './Message';
+import Avatar from './Avatar';
 
 export {
-    Message
+    Message,
+    Avatar
 }

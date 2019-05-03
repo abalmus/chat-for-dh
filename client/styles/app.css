@@ -1,20 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body,
 html {
     font-size: 16px;
     box-sizing: border-box;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: Work Sans, sans-serif;
+    background: '#F7F7F7';
+}
+
+a {
+    text-decoration: none;
 }
 
 .chat {
     height: 100%;
 }
 
+@media only screen and (max-width: 1023px) {
+    .chat {
+        display: grid;
+        grid-template-rows: 10% 90%;
+    }
+}
+
 .side-nav {
+    position: relative;
     background: #352646;
+    overflow: hidden;
+    min-height: 2.5rem;
+}
+
+.side-nav nav.utility {
+    position: absolute;
+    right: 0;
+    padding-top: 0.5rem;
+}
+
+.side-nav .avatar {
+    position: absolute;
+    left: 0;
+    font-size: 2rem;
+    color: #7541AD;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    background: #dfdce6;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+
+.side-nav nav.utility a {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.side-nav nav.utility a i {
+    line-height: 2.5rem;
+}
+
+.side-nav nav.utility a.help {
+    display: none;
 }
 
 .chat-rooms {
     border-right: 1px solid #cccccc;
+}
+
+.messages-container {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 10rem;
 }
 
 .messages {
@@ -22,19 +84,24 @@ html {
     list-style: none;
     margin: 0;
     padding: 1rem;
-    height: 80%;
     overflow-y: auto;
+}
+
+.chat-header {
+    display: grid;
+    grid-template-rows: auto auto;
 }
 
 .chat-control {
     position: relative;
-    height: 20%;
+    background: #ffffff;
 }
 
 .chat-control-options {
-    height: 30%;
+    height: auto;
     padding: 0.6rem 1rem;
     border-bottom: 1px solid #cccccc;
+    background: #F7F7F7;
 }
 
 .chat-control-options i {
@@ -51,7 +118,6 @@ html {
 .chat-control-form {
     background: #ffffff;
     width: 100%;
-    height: 70%;
 }
 
 .chat-control-form button {
@@ -71,17 +137,17 @@ html {
 }
 
 .chat-control-form textarea {
+    font-family: Work Sans, sans-serif;
     width: 100%;
-    height: 100%;
     padding: 1rem;
     border: 0;
 }
 
 .message {
     font-size: 1rem;
-    background: #c7c7c7;
+    background: #dfdce6;
     display: inline-block;
-    padding: 0.5rem;
+    padding: 0.5rem 2rem;
     text-align: left;
     border-radius: 0.5rem;
     max-width: 60%;
@@ -97,7 +163,95 @@ html {
 }
 
 .self-message .message {
-    padding: 0.5rem 2rem;
     background: #7541AD;
     color: #ffffff;
+}
+
+@media only screen and (min-width: 1024px) {
+    .chat {
+        display: grid;
+        grid-template-columns: 15rem auto;
+        height: 100%;
+    }
+
+    .chat-header {
+        position: relative;
+        display: grid;
+        grid-template-rows: none;
+        grid-template-columns: 4rem auto;
+    }
+
+    .side-nav nav.utility {
+        text-align: center;
+        top: auto;
+        bottom: 2rem;
+        left: 0;
+        right: 0;
+    }
+
+    .side-nav nav.utility a {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        margin-right: 0;
+    }
+
+    .side-nav nav.utility a.help {
+        display: inline-block;
+    }
+}
+
+/* Settings Page */
+.settings-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    background: #7541AD;
+    border-radius: 1rem;
+}
+
+.settings-container form {
+    display: block;
+    max-width: 20rem;
+    margin: 30% auto;
+    width: 80%;
+}
+
+.field-group {
+    padding: 1rem;
+    background: #653698;
+    margin-bottom: 1rem;
+}
+
+.field-group input[type="radio"] + label,
+.field-group h3 {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #F7F7F7;
+    margin-bottom: 0.5rem;
+}
+
+.field-group input[type="text"],
+.field-group select,
+.settings-container button {
+    width: 100%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+.field-group input[type="radio"] + label {
+    font-size: 1rem;
+    margin-right: 2rem;
+    margin-left: 0.5rem;
+}
+
+@media only screen and (min-width: 600px) {
+    .settings-container form {
+        margin: 10% auto;
+    }
 }

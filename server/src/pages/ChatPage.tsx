@@ -1,16 +1,28 @@
 import React from 'react';
-import { Message } from './components/index';
-import { ChatPagePropsI, MessageI } from '../types/index';
+import { Message, Avatar } from './components';
+import { ChatPagePropsI, MessageI, AvatarPropsI } from '../types';
 import { PageLayout } from './layouts/PageLayout';
 
 export const ChatPage = ({ messages = [], user }: ChatPagePropsI) => (
     <PageLayout js={['/client/clientApp.js']}>
-        <div className="grid chat">
-            <div className="col-1 side-nav">
-                <h4>Hello {user.userName}</h4>
+        <div className="chat">
+            <div className="chat-header">
+                <div className="side-nav">
+                    <Avatar letter={user.userName[0]} />
+
+                    <nav className="utility">
+                        <a href="/settings">
+                            <i className="icon-cog" tabIndex={0} title="Settings"></i>
+                        </a>
+                        <a href="/help" className="help">
+                            <i className="icon-lifebuoy" tabIndex={0} title="Help"></i>
+                        </a>
+                    </nav>
+                </div>
+                <div className="chat-rooms"></div>
             </div>
-            <div className="col-2 chat-rooms"></div>
-            <div className="col-9">
+
+            <div className="messages-container">
                 <ul id="messages" className="messages">
                     { messages.map((message: MessageI, i) => <Message key={i} {...message} isSelf={user.userName === message.userName} /> )}
                 </ul>

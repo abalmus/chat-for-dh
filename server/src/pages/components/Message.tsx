@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageI } from '../../types/index';
+import { MessageI } from '../../types';
 
 const Message = ({ userName, text, time, isSelf }: MessageI) => (
     <li className={isSelf ? 'self-message' : ''}>
