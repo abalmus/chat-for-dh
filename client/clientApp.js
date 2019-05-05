@@ -6,6 +6,7 @@ socket.on('message:pushed', handleMessagePush);
 messageForm.addEventListener('submit', handleMessagesFormSubmit);
 
 function handleMessagePush(message) {
+    console.log(message);
     const user = JSON.parse(localStorage.getItem('user'));
     const isSelf = user.userName === message.userName;
     const time = new Date(message.time);
@@ -36,7 +37,8 @@ function handleMessagesFormSubmit(evnt) {
 
     socket.emit('massage:push', {
         text: inputElement.value,
-        userName: user.userName
+        userName: user.userName,
+        userId: user.id
     });
 
     scrallContainer();

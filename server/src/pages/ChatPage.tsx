@@ -14,7 +14,7 @@ export const ChatPage = ({ messages = [], user }: ChatPagePropsI) => {
     const { t } = useTranslation();
 
     return (
-        <PageLayout js={['/client/clientApp.js']}>
+        <PageLayout js={['/client/clientApp.js']} settings={user.settings}>
             <div className="chat">
                 <div className="chat-header">
                     <div className="side-nav">

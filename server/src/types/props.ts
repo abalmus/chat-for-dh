@@ -1,4 +1,10 @@
-import { MessageI, UserI, UtilityNavItemI, ChooseOptionItemI } from '../types';
+import {
+    MessageI,
+    UserI,
+    UtilityNavItemI,
+    ChooseOptionItemI,
+    UserSettingsI
+} from '../types';
 
 export interface ChatPagePropsI {
     messages: MessageI[];
@@ -9,6 +15,7 @@ export interface ChatPagePropsI {
 export interface PageLayoutPropsI {
     children?: any;
     js?: string[];
+    settings: UserSettingsI
 }
 
 export interface SettingsPagePropsI {

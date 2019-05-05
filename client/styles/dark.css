@@ -1,0 +1,12 @@
+.side-nav {
+    background: #000;
+}
+
+.chat-rooms,
+.messages-container {
+    background: #352646;
+}
+
+.message-info {
+    color: #f7f7f7;
+}

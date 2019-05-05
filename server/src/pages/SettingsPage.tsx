@@ -13,7 +13,7 @@ export const SettingsPage = ({ user }: SettingsPagePropsI) => {
     const { t } = useTranslation();
 
     return (
-        <PageLayout js={['/client/settings.js']}>
+        <PageLayout js={['/client/settings.js']} settings={user.settings}>
             <section className="settings-container">
                 <form id="settingsForm" tabIndex={0}>
                     <UserName userName={user.userName} />
