@@ -3,6 +3,8 @@ import { Controller, IController, Get, Autowired } from 'odi';
 import { ChatPage } from '../pages/ChatPage';
 import MessagesService from '../services/messages';
 import UserService from '../services/user';
+import i18n from '../i18n';
+import { I18nextProvider } from 'react-i18next';
 
 @Controller()
 export class IndexController extends IController {
@@ -20,6 +22,12 @@ export class IndexController extends IController {
             return this.redirect('/settings');
         }
 
-        return <ChatPage messages={this.messages.getAll()} user={user} />
+        i18n.changeLanguage(user.settings.language);
+
+        return (
+            <I18nextProvider i18n={i18n}>
+                <ChatPage messages={this.messages.getAll()} user={user} />
+            </I18nextProvider>
+        );
     }
 }

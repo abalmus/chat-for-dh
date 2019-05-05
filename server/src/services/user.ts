@@ -25,7 +25,7 @@ export default class UserService {
     }
 
     getUser(id: number | string) {
-        return this.store[id] || {};
+        return this.store[id] || { settings: {} };
     }
 
     getSettings() {
@@ -34,8 +34,8 @@ export default class UserService {
 }
 
 function makeId(size: number) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
 
     for ( var i = 0; i < size; i++ ) {
@@ -44,3 +44,4 @@ function makeId(size: number) {
 
     return result;
  }
+ 

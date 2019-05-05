@@ -1,51 +1,76 @@
 import React from 'react';
-import { SettingsPagePropsI } from '../types/index';
+import { SettingsPagePropsI } from '../types';
 import { PageLayout } from './layouts/PageLayout';
+import { useTranslation } from 'react-i18next';
 
-export const SettingsPage = ({ user }: SettingsPagePropsI) => (
-    <PageLayout js={['/client/settings.js']}>
-        <section className="settings-container">
-            <form id="settingsForm" tabIndex={0}>
-                <div className="field-group">
-                    <h3><label htmlFor="userName">User Name</label></h3>
-                    <input type="text" name="userName" defaultValue={user.userName} placeholder="Please inser your name" />
-                </div>
+import {
+    ChooseOne,
+    UserName,
+    LanguageSelector
+} from './components';
 
-                <div className="field-group">
-                    <h3>Interface Color</h3>
-                    <input type="radio" name="interfaceColor" value="light" id="interfaceColorLight" defaultChecked={true} /> 
-                    <label htmlFor="interfaceColorLight">Light</label>
-                    <input type="radio" name="interfaceColor" value="dark" id="interfaceColorDight"  /> 
-                    <label htmlFor="interfaceColorDight">Dark</label>
-                </div>
+export const SettingsPage = ({ user }: SettingsPagePropsI) => {
+    const { t } = useTranslation();
 
-                <div className="field-group">
-                    <h3>Time Format</h3>
-                    <input type="radio" name="timeFormat" value="12" id="timeFormat12" defaultChecked={true} /> 
-                    <label htmlFor="timeFormat12">12 hours</label>
-                    <input type="radio" name="timeFormat" value="24" id="timeFormat24" /> 
-                    <label htmlFor="timeFormat24">24 hours</label>
-                </div>
+    return (
+        <PageLayout js={['/client/settings.js']}>
+            <section className="settings-container">
+                <form id="settingsForm" tabIndex={0}>
+                    <UserName userName={user.userName} />
 
-                <div className="field-group">
-                    <h3>CTRL+ENTER</h3>
-                    <input type="radio" name="ctrlEnter" value="on" id="ctrlEnterOn" defaultChecked={true} /> 
-                    <label htmlFor="ctrlEnterOn">On</label>
-                    <input type="radio" name="ctrlEnter" value="off" id="ctrlEnterOff" /> 
-                    <label htmlFor="ctrlEnterOff">Off</label>
-                </div>
+                    <ChooseOne
+                        name="interfaceColor"
+                        title={t('interfaceColor')}
+                        options={[{
+                            label: t('light'),
+                            value: 'light'
+                        }, {
+                            label: t('dark'),
+                            value: 'dark'
+                        }]}
+                    />
 
-                <div className="field-group">
-                    <h3>Language</h3>
-                    <select name="language">
-                        <option value="en">English</option>
-                        <option value="de">Germany</option>
-                    </select>
-                </div>
-                <br />
+                    <ChooseOne
+                        name="timeFormat"
+                        title={t('timeFormat')}
+                        options={[{
+                            label: `12 ${t('hours')}`,
+                            value: '12'
+                        }, {
+                            label: `24 ${t('hours')}`,
+                            value: '24'
+                        }]}
+                    />
 
-                <button type="submit">Save</button>
-            </form>
-        </section>
-    </PageLayout>
-)
+                    <ChooseOne
+                        name="ctrlEnter"
+                        title="CTRL+ENTER"
+                        options={[{
+                            label: t('on'),
+                            value: 'on'
+                        }, {
+                            label: t('off'),
+                            value: 'off'
+                        }]}
+                    />
+
+                    <LanguageSelector
+                        title={t('language')}
+                        selectedValue={user.settings.language}
+                        options={[{
+                            value: 'en',
+                            label: t('english')
+                        }, {
+                            value: 'de',
+                            label: t('germany')
+                        }]}
+                    />
+
+                    <br />
+
+                    <button type="submit">{t('save')}</button>
+                </form>
+            </section>
+        </PageLayout>
+    );
+}

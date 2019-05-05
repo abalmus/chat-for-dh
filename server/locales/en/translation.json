@@ -1,0 +1,21 @@
+{
+    "title": "Welcome",
+    "messagePlaceholder": "Type your message",
+    "channels": "Channels",
+    "messageTitle": "Send Message",
+    "settings": "Settings",
+    "help": "Help",
+    "language": "Language",
+    "userName": "User Name",
+    "save": "Save",
+    "hours": "hours",
+    "on": "On",
+    "off": "Off",
+    "english": "English",
+    "germany": "Germany",
+    "light": "Light",
+    "dark": "Dark",
+    "timeFormat": "Time Format",
+    "interfaceColor": "Interface Color",
+    "userNamePlaceholder": "Please inser your name"
+}

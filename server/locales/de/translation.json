@@ -1,0 +1,21 @@
+{
+  "title": "Herzlich willkommen",
+  "messagePlaceholder": "Geben Sie Ihre Nachricht ein",
+  "channels": "Kanäle",
+  "messageTitle": "Nachricht senden",
+  "settings": "Einstellungen",
+  "help": "Hilfe",
+  "language": "Sprache",
+  "userName": "Nutzername",
+  "save": "Sparen",
+  "hours": "Std",
+  "on": "Auf",
+  "off": "Aus",
+  "english": "Englisch",
+  "germany": "Deutschland",
+  "light": "Licht",
+  "dark": "Dunkel",
+  "timeFormat": "Zeitformat",
+  "interfaceColor": "Schnittstellenfarbe",
+  "userNamePlaceholder": "Bitte geben Sie Ihren Namen ein"
+}
