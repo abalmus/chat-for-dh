@@ -31,7 +31,7 @@ function handleMessagePush(message) {
 
 function handleCtrlEnter(evnt) {
     const user = JSON.parse(localStorage.getItem('user'));
-    console.log(evnt);
+
     if (evnt.ctrlKey && evnt.keyCode == 13 && user.settings.ctrlEnter === 'on') {
         handleMessagesFormSubmit(evnt);
     }
