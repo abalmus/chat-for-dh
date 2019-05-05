@@ -4,7 +4,7 @@ Simple Chat application based on "Odi" (typescript framework) and React. Socket.
 
 ## Features
 | Feature Name   |      Completed      |
-|----------|:-------------:|------:|
+| --- | --- |
 | Server-Side Rendering   | YES |
 | Real Time Communication | YES |
 | Localization via i18n   | YES | 
@@ -18,7 +18,7 @@ Simple Chat application based on "Odi" (typescript framework) and React. Socket.
 
 ### Environment
 | Name  |      Version      |
-|----------|:-------------:|------:|
+| --- | --- |
 | npm   | 6.7.0 |
 | node   | 11.15.0 |
 | yarn | 1.13.0 |
