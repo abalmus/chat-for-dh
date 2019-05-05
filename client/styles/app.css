@@ -255,3 +255,9 @@ a {
         margin: 10% auto;
     }
 }
+
+button.link {
+    background: transparent;
+    color: #f7f7f7;
+    margin-top: 1rem;
+}

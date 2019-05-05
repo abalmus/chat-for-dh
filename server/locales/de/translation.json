@@ -17,5 +17,6 @@
   "dark": "Dunkel",
   "timeFormat": "Zeitformat",
   "interfaceColor": "Schnittstellenfarbe",
-  "userNamePlaceholder": "Bitte geben Sie Ihren Namen ein"
+  "userNamePlaceholder": "Bitte geben Sie Ihren Namen ein",
+  "reset": "Zurucksetzen"
 }

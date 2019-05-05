@@ -21,6 +21,7 @@ export const SettingsPage = ({ user }: SettingsPagePropsI) => {
                     <ChooseOne
                         name="interfaceColor"
                         title={t('interfaceColor')}
+                        defaultValue={user.settings.interfaceColor}
                         options={[{
                             label: t('light'),
                             value: 'light'
@@ -33,6 +34,7 @@ export const SettingsPage = ({ user }: SettingsPagePropsI) => {
                     <ChooseOne
                         name="timeFormat"
                         title={t('timeFormat')}
+                        defaultValue={user.settings.timeFormat}
                         options={[{
                             label: `12 ${t('hours')}`,
                             value: '12'
@@ -45,6 +47,7 @@ export const SettingsPage = ({ user }: SettingsPagePropsI) => {
                     <ChooseOne
                         name="ctrlEnter"
                         title="CTRL+ENTER"
+                        defaultValue={user.settings.ctrlEnter}
                         options={[{
                             label: t('on'),
                             value: 'on'
@@ -56,7 +59,7 @@ export const SettingsPage = ({ user }: SettingsPagePropsI) => {
 
                     <LanguageSelector
                         title={t('language')}
-                        selectedValue={user.settings.language}
+                        defaultValue={user.settings.language}
                         options={[{
                             value: 'en',
                             label: t('english')
@@ -69,6 +72,10 @@ export const SettingsPage = ({ user }: SettingsPagePropsI) => {
                     <br />
 
                     <button type="submit">{t('save')}</button>
+
+                    <br />
+
+                    <button className="link" type="reset">{t('reset')}</button>
                 </form>
             </section>
         </PageLayout>

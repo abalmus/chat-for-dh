@@ -17,5 +17,6 @@
     "dark": "Dark",
     "timeFormat": "Time Format",
     "interfaceColor": "Interface Color",
-    "userNamePlaceholder": "Please inser your name"
+    "userNamePlaceholder": "Please inser your name",
+    "reset": "Reset"
 }

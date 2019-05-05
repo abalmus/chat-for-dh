@@ -3,7 +3,8 @@ import {
     UserI,
     UtilityNavItemI,
     ChooseOptionItemI,
-    UserSettingsI
+    UserSettingsI,
+    LangOptionI
 } from '../types';
 
 export interface ChatPagePropsI {
@@ -39,10 +40,17 @@ export interface ChooseOnePropsI {
     title: string;
     name: string;
     options: ChooseOptionItemI[];
+    defaultValue: string;
 }
 
 export interface UserNamePropsI {
     userName: string;
+}
+
+export interface LanguageSelectorPropsI {
+    title: string;
+    options: LangOptionI[];
+    defaultValue: string;
 }
 
 export interface ChatControlPropsI {

@@ -2,7 +2,7 @@ import React from 'react';
 import { PageLayoutPropsI } from '../../types';
 
 export const PageLayout = ({ children, settings, js = [] }: PageLayoutPropsI) => (
-  <html lang="en">
+  <html lang={settings.language}>
     <head>
       <title>Docler Chat</title>
       <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
