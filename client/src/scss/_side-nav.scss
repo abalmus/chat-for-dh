@@ -1,0 +1,59 @@
+.side-nav {
+    position: relative;
+    background: $dark-background;
+    overflow: hidden;
+    min-height: $space-x-large;
+
+    .avatar {
+        position: absolute;
+        left: 0;
+        font-size: $font-large;
+        color: $primary-color;
+        width: $space-x-large;
+        height: $space-x-large;
+        text-align: center;
+        background: $light-color;
+        border-radius: 50%;
+        margin: $space-xx-small;
+    }
+
+    nav.utility {
+        position: absolute;
+        right: 0;
+        padding-top: $space-xx-small;
+
+        @media only screen and (min-width: $layout-breakpoint-min) {
+            text-align: center;
+            top: auto;
+            bottom: $space-large;
+            left: 0;
+            right: 0;
+        }
+
+        a {
+            display: inline-block;
+            color: $light-color;
+            font-size: $font-medium;
+            margin-right: $space-small;
+
+            @media only screen and (min-width: $layout-breakpoint-min) {
+                display: block;
+                font-size: $font-large;
+                margin-bottom: $space-large;
+                margin-right: 0;
+            }
+
+            &.help {
+                display: none;
+
+                @media only screen and (min-width: $layout-breakpoint-min) {
+                    display: inline-block;
+                }
+            }
+
+            i {
+                line-height: $space-x-large;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.chat {
+    display: grid;
+    height: 100%;
+
+    @media only screen and (max-width: $layout-breakpoint-max) {
+        grid-template-rows: 10% 90%;
+    }
+
+    @media only screen and (min-width: $layout-breakpoint-min) {
+        grid-template-columns: $layout-sizing-large auto;
+        height: 100%;
+    }
+
+    &-rooms {
+        border-right: $border-width solid $bolder-color;
+    }
+
+    &-header {
+        display: grid;
+        grid-template-rows: auto auto;
+
+        @media only screen and (min-width: $layout-breakpoint-min) {
+            position: relative;
+            display: grid;
+            grid-template-rows: none;
+            grid-template-columns: $layout-sizing-small auto;
+        }
+    }
+
+    &-control {
+        position: relative;
+        background: $white;
+    }
+
+    &-control-options {
+        height: auto;
+        padding: $space-x-small $space-small;
+        border-bottom: $border-width solid $bolder-color;
+        background: $light-color;
+
+        i {
+            font-size: $font-medium;
+            margin-right: $space-medium;
+            color: $primary-color;
+            cursor: pointer;
+
+            &:hover {
+                color: $dark-background;
+            }
+        }
+    }
+
+    &-control-form {
+        background: $light-color;
+        width: 100%;
+
+        button {
+            position: absolute;
+            right: $space-small;
+            top: 50%;
+            height: 50px;
+            width: 50px;
+            font-size: $font-medium;
+            background: $primary-color;
+            color: $light-color;
+            border-radius: 50%;
+
+            &:hover {
+                background: $dark-background;
+            }
+        }
+
+        textarea {
+            font-family: Work Sans, sans-serif;
+            width: 100%;
+            padding: $space-small;
+            border: 0;
+        }
+    }
+}

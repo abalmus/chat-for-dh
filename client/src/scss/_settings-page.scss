@@ -1,0 +1,51 @@
+.settings-container {
+    position: fixed;
+    top: $space-small;
+    right: $space-small;
+    bottom: $space-small;
+    left: $space-small;
+    background: $primary-color;
+    border-radius: $space-small;
+
+    form {
+        display: block;
+        max-width: $layout-sizing-x-large;
+        margin: 30% auto;
+        width: 80%;
+
+        @media only screen and (min-width: 600px) {
+            margin: 10% auto;
+        }
+    }
+
+    input[type="text"],
+    select,
+    button {
+        width: 100%;
+        height: $space-large;
+        border-radius: $border-radius;
+        padding: 0 $space-small;
+        font-size: $font-x-small;
+    }
+}
+
+.field-group {
+    padding: $space-small;
+    background: $light-background;
+    margin-bottom: $space-small;
+    border-radius: $border-radius;
+
+    input[type="radio"] + label,
+    h3 {
+        text-transform: uppercase;
+        font-size: $font-small;
+        color: $light-color;
+        margin-bottom: $space-xx-small;
+    }
+
+    input[type="radio"] + label {
+        font-size: $font-x-small;
+        margin-right: $space-large;
+        margin-left: $space-xx-small;
+    }
+}
