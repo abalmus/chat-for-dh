@@ -8,7 +8,8 @@ Simple Chat application based on "Odi" (typescript framework) and React. Socket.
 | Server-Side Rendering   | YES |
 | Real Time Communication | YES |
 | Localization via i18n   | YES | 
-| Theming                 | YES | 
+| Theming                 | YES |
+| CSS Preprocessor        | YES |
 | Smiles                  | NO  | 
 | Link Parser             | NO  |
 | Scheduled Messages      | NO  |
